@@ -1,0 +1,34 @@
+{
+  "name": "@hardillb/node-red-node-geolib",
+  "version": "0.0.1",
+  "description": "Nodes for working with geographic locations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red",
+    "location"
+  ],
+  "node-red": {
+    "nodes": {
+      "geolib-bearing": "bearing.js",
+      "geolib-distance": "distance.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hardillb/node-red-node-geolib.git"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "geolib": "^3.3.4"
+  },
+  "contributors": [
+    {
+      "name": "Benjamin Hardill",
+      "email": "hardillb@gmail.com",
+      "url": "http://blog.hardill.me.uk/"
+    }
+  ]
+}
