@@ -8,6 +8,7 @@ module.exports = function (RED) {
         this.latType = n.latType
         this.lon = n.lon
         this.lonType = n.lonType
+        this.round = n.round
 
         const node = this
 
@@ -38,7 +39,7 @@ module.exports = function (RED) {
                 const distance = geolib.getDistance({
                     latitude: startLat,
                     longitude: startLon
-                }, loc, 100)
+                }, loc, node.round)
 
                 msg.payload = distance
                 send(msg)

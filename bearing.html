@@ -18,6 +18,15 @@
 
 <script type="text/html" data-help-name="geolib-bearing">
     <p>Calculates the compass bearing from a known point to the input</p>
+    <h3>Input</h3>
+    <p>The node will read from the following in order stopping at first available:</p> 
+    <ul>
+      <li>`msg.location.lat` & `msg.location.lon`</li>
+      <li>`msg.lat` & `msg.lon`</li>
+      <li>`msg.payload.lat` & `msg.payload.lon</li>
+    </ul>
+    <h3>Output</h3>
+    <p>`msg.payload` compass bearing in Degrees</p>
 </script>
 
 <script type="text/javascript">

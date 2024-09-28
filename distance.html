@@ -10,13 +10,27 @@
         <input type="hidden" id="node-input-lonType">
     </div>
     <div class="form-row">
+        <label for="node-input-round"><i class="icon-tag"> Round to</i></label>
+        <input type="text" id="node-input-round" placeholder="100m">
+    </div>
+    <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"> Name</i></label>
         <input type="text" id="node-input-name" placeholder="name">
     </div>
 </script>
 
 <script type="text/html" data-help-name="geolib-distance">
-    <p>Calculates the distance from a known point to the input</p>
+    <p>Calculates the distance from a known point to the input location in meters</p>
+    <h3>Input</h3>
+    <p>The node will read from the following in order stopping at first available:</p> 
+    <ul>
+      <li>`msg.location.lat` & `msg.location.lon`</li>
+      <li>`msg.lat` & `msg.lon`</li>
+      <li>`msg.payload.lat` & `msg.payload.lon</li>
+    </ul>
+    <h3>Output</h3>
+    <p>`msg.payload` distance in metres</p>
+    <p>By default it will round to the closest 100m</p>
 </script>
 
 <script type="text/javascript">
@@ -28,7 +42,8 @@
             lat: {required: true} , //validate: function (v) { return v>=0 && v<360}},
             latType: {value: "num"},
             lon: {required: true} , //validate: function (v) { return v>=0 && v<360}},
-            lonType: {value: "num"}
+            lonType: {value: "num"},
+            round: {value: 100, required: true}
         },
         inputs: 1,
         outputs: 1,
